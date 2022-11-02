@@ -1,0 +1,219 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import url('../fonts/Oks-Free.otf');
+
+@font-face {
+    font-family: Oks Free;
+    src: url('../fonts/Oks-Free.otf');
+    }
+
+body {
+    color: #092327;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgba(9, 35, 39, 0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(11, 83, 81);
+    border-radius: 15px;
+}
+
+.wrapper {
+    max-width: 400px;
+    min-width: 200px;
+    margin: 30px auto 10px auto;
+}
+
+.wrapper-chat {
+    max-width: 400px;
+    min-width: 300px;
+    border: 1px solid #0B5351;
+    border-radius: .25rem;
+}
+
+.text-header {
+    font-family: Oks Free;
+    margin: 0 auto 10px auto;
+    text-align: center;
+    font-size: 2em;
+    color: #0B5351;
+}
+
+.chat-field {
+    height: 300px;
+    margin: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.msg-sent {
+    font-size: 12px;
+    text-align: center;
+    width: 200px;
+    border-radius: .5rem;
+    padding: 3px;
+    margin-bottom: 20px;
+    margin-right: 140px;
+    color: #7e161d;
+    border: 1px solid #7e161d;
+}
+
+.msg-recieved {
+    font-size: 12px;
+    text-align: center;
+    width: 200px;
+    border-radius: .5rem;
+    border: 1px solid #0B5351;
+    padding: 3px;
+    margin-bottom: 20px;
+    margin-left: 140px;
+}
+
+.msg-geo {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    width: 120px;
+    border-radius: .5rem;
+    border: 1px solid #530b47;
+    color: #530b47;
+    padding: 3px 10px;
+    margin: 0 0 20px 220px;
+    text-decoration: none;
+}
+
+.msg-geo:hover {
+    color: #b21395;
+}
+
+.msg-error {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    width: 170px;
+    border-radius: .5rem;
+    border: 1px solid #DA2C38;
+    color: #DA2C38;
+    padding: 3px 10px;
+    margin: 0 0 20px 170px;
+    text-decoration: none;
+}
+
+.chat-open {
+    font-size: 12px;
+    text-align: center;
+    width: 100px;
+    border-radius: .5rem;
+    border: 1px solid #226F54;
+    padding: 3px;
+    margin: 0 auto 20px auto;
+    font-weight: 600;
+    color: #226F54;
+}
+
+.status {
+    margin: 0 auto;
+    width: 100px;
+    height: 50px;
+}
+
+.chat-close {
+    font-size: 12px;
+    text-align: center;
+    width: 100px;
+    border-radius: .5rem;
+    border: 1px solid #DA2C38;
+    padding: 3px;
+    margin: 0 auto 20px auto;
+    font-weight: 600;
+    color: #DA2C38;
+}
+
+.send-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10px;
+}
+
+.btn {
+    font-size: 12px;
+    color: #fff;
+    background-color: #0B5351;
+    margin: 0 10px 0 0;
+}
+
+.btn:focus {
+   -webkit-box-shadow: none;
+           box-shadow: none;
+}
+
+.btn-close:focus {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+.btn:hover {
+    -webkit-transition: background-color .5s ease-in;
+    -o-transition: background-color .5s ease-in;
+    transition: background-color .5s ease-in;
+    background-color: #092327;
+    color: #fff;
+ }
+
+ .btn-clear {
+    margin: 0;
+ }
+
+.form-control {
+    font-size: 12px;
+    margin: 0 10px 0 0;
+    border: 1px solid #092327;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #092327;
+    opacity: .5;
+}
+
+.form-control::-moz-placeholder {
+    color: #092327;
+    opacity: .5;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #092327;
+    opacity: .5;
+}
+
+.form-control::-ms-input-placeholder {
+    color: #092327;
+    opacity: .5;
+}
+
+.form-control::placeholder {
+    color: #092327;
+    opacity: .5;
+}
+
+.form-control:focus, .form-control:active  {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: 1px solid #092327;
+    color: #092327;
+ }

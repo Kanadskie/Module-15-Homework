@@ -1,0 +1,28 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    margin: 200px auto 0 auto;
+    border: 1px solid black;
+}
+
+.btn:focus {
+   box-shadow: none;
+}
+
+.btn-text {
+    margin: 0 10px 0 0;
+}
+
+.icon-first {
+    width: 1em;
+    height: 1em;
+    background-image: url('../icon/arrow-circle.svg');
+}
+
+.icon-second {
+    width: 1em;
+    height: 1em;
+    background-image: url('../icon/arrow-circle-fill.svg');
+}
