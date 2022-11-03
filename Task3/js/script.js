@@ -52,11 +52,13 @@ function openConnection() {
         websocket.close();
         websocket = null;
         btn.removeEventListener('click', echoMsg);
+        btnGeo.removeEventListener('click', getGeo);
         $("#modal").modal("show");
     }
 };
 
 // 6. Объявляем функцию, которая обрабатывает полученное из input сообщение и отправляет его обратно
+
 function echoMsg() {
 
     websocket.onmessage = function(event) {
@@ -69,28 +71,33 @@ function echoMsg() {
     message = '';
 }
 
-// 7. Объявляем функциональные выражения для удачной и неудачной попытки отображения геолокации пользователя
+// 7. Объявляем функцию для удачной и неудачной попытки отображения геолокации пользователя
 
-const error = () => {
-    let error = document.createElement('div');
-    error.className = 'msg-error';
-    error.textContent = `No access to Geolocation`;
-    chatField.appendChild(error);
-    scrollChat(error);
+function getGeo() {
+
+    const error = () => {
+        let error = document.createElement('div');
+        error.className = 'msg-error';
+        error.textContent = `No access to Geolocation`;
+        chatField.appendChild(error);
+        scrollChat(error);
+    }
+    
+    const success = (position) => {
+        const latitude  = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        let geolocation = document.createElement('a');
+        geolocation.className = 'msg-geo';
+        geolocation.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+        geolocation.target = `_blank`;
+        geolocation.textContent = `My Geolocation`;
+        chatField.appendChild(geolocation);
+        scrollChat(geolocation);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error);
 }
 
-const success = (position) => {
-    const latitude  = position.coords.latitude;
-    const longitude = position.coords.longitude;
-
-    let geolocation = document.createElement('a');
-    geolocation.className = 'msg-geo';
-    geolocation.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    geolocation.target = `_blank`;
-    geolocation.textContent = `My Geolocation`;
-    chatField.appendChild(geolocation);
-    scrollChat(geolocation);
-}
 
 // 8. Объявляем функцию для скролла в top последних сообщений чата, чтобы они всегда были видны
 
@@ -104,9 +111,7 @@ function scrollChat(item) {
 
 btn.addEventListener('click', echoMsg);
 
-btnGeo.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition(success, error);
-});
+btnGeo.addEventListener('click', getGeo);
 
 btnRes.addEventListener('click', () => {
     statusMsg.innerHTML = '';
