@@ -86,6 +86,7 @@ const success = (position) => {
     let geolocation = document.createElement('a');
     geolocation.className = 'msg-geo';
     geolocation.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+    geolocation.target = `_blank`;
     geolocation.textContent = `My Geolocation`;
     chatField.appendChild(geolocation);
     scrollChat(geolocation);
