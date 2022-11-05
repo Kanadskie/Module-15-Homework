@@ -41,6 +41,7 @@ function openConnection() {
         sessionOpen.className = 'chat-open';
         sessionOpen.innerHTML = 'OPENED';
         statusMsg.appendChild(sessionOpen);
+        btnGeo.addEventListener('click', getGeo);
     }
 
     websocket.onclose = function() {
@@ -110,8 +111,6 @@ function scrollChat(item) {
 // 9. Вызываем обработчики событий - при загрузке страницы и при нажатии на кнопки
 
 btn.addEventListener('click', echoMsg);
-
-btnGeo.addEventListener('click', getGeo);
 
 btnRes.addEventListener('click', () => {
     statusMsg.innerHTML = '';
